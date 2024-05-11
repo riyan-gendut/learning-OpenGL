@@ -1,3 +1,9 @@
+//trying to draw a square in a grid that moves to the right when you press E
+//was supposed to be "fixed" version of dispgridtry.cpp but it still reads illegal memory lol
+//WARNING: The color buffer reads from "illegal" memory because I'm dumb. use at your own risk.
+//Caution: this code is an abomination that generates massive multidimensional arrays
+
+
 #include <stdlib.h>
 #include <iostream>
 #include <vector>
