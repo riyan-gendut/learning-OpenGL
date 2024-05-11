@@ -1,3 +1,5 @@
+//a multicolor triangle that gets redrawn whenever you press E
+
 #include <GLFW/glfw3.h>
 #include <GL/gl.h>
 
