@@ -1,3 +1,5 @@
+//simple drawing exercise, drawing the Palestinian flag
+
 #include <GLFW/glfw3.h>
  
 void displayMe(void)
