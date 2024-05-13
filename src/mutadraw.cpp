@@ -38,6 +38,7 @@ void drawSqr(float coordin[], float colors[], int index)
 int main(int argc, char** argv){
     int height=20;
     int width=20;
+    int wdsz[2];
     float arrin[8];
     float color[12]={0.4,0.5,0.8,0.4,0.5,0.8,0.4,0.5,0.8,0.4,0.5,0.8};
     int i=0;
@@ -64,6 +65,8 @@ int main(int argc, char** argv){
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
+        glfwGetWindowSize(window,&wdsz[0],&wdsz[1]);
+        glViewport(0,0,wdsz[0],wdsz[1]);
         /* Render here */
         SquareFromGridCoordinate(j,i,width,height,arrin);
         glClear(GL_COLOR_BUFFER_BIT);
