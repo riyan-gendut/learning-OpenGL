@@ -8,7 +8,6 @@ anyway each cpp files are separate programs, this isn't intended to be compiled 
 
 * **_compile.sh_**
  * just a helper script to simplify compilation with gcc
-
 * **smpren.cpp**
   * simple hello world triangle
 * **flag.cpp**
