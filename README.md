@@ -7,7 +7,8 @@ A bunch of small programs made while I'm learning basic graphical programming in
 anyway each cpp files are separate programs, this isn't intended to be compiled as a single project
 
 * **_compile.sh_**
- * just a helper script to simplify compilation with gcc
+  * just a helper script to simplify compilation with gcc
+
 * **smpren.cpp**
   * simple hello world triangle
 * **flag.cpp**
