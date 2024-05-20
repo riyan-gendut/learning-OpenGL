@@ -33,3 +33,15 @@ anyway each cpp files are separate programs, this isn't intended to be compiled 
 * **mutadraw.cpp**
   * testing mutagrid.cpp in opengl. had to modify the fuction because opengl float coordinates go from -1 to 1
   * and I learned my lesson! the colors don't read illegal memories anymore!
+* **arrowtips.cpp**
+  * adding more stuff to mutadraw, now the square moves with arrow keys and warps back when reaching the edge
+  * also added minor tweak so the content would keep their aspect ratio when the window is resized
+* **arrogo.cpp**
+  * testing for two different squares to move around
+  * this one is more playing around than anything
+  * further development don't really refer to this one
+* **arrowbjective.cpp**
+  * using class and objects to, well, represents objects with x and y coordinate
+  * array creation and draw functions now encapsulated within objects, allowing for non-squares in the future!
+  * this is technically the first time the project really used C++, before this I could've used pure C
+  * about the only reason I used C++ was because I liked iostream better than stdio
