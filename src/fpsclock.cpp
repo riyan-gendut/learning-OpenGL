@@ -1,4 +1,7 @@
-//TODO: Use vector systems to implement rotations and movement
+//a small clock with a minute and second hand
+//"a second" is "60 frames" which is a dumb way to determine time
+//test program for rotational matrix
+//I promise I'll use OOP eventually
 
 #include <cmath>
 #include <iostream>
