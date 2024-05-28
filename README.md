@@ -45,3 +45,8 @@ anyway each cpp files are separate programs, this isn't intended to be compiled 
   * array creation and draw functions now encapsulated within objects, allowing for non-squares in the future!
   * this is technically the first time the project really used C++, before this I could've used pure C
   * about the only reason I used C++ was because I liked iostream better than stdio
+* **fpsclock.cpp**
+  * a small clock with a minute and second hand
+  * "a second" is "60 frames" which is a dumb way to determine time
+  * test program for rotational matrix
+  * I promise I'll use OOP eventually
