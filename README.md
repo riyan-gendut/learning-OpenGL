@@ -1,10 +1,10 @@
 # learning-OpenGL
 
-A bunch of small programs made while I'm learning basic graphical programming in (old) OpenGL and C++.
+A bunch of small programs made while I'm learning basic graphical programming in (old) OpenGL and C++, using the GLFW library.
 
 ...though it's *all* old now.
 
-anyway each cpp files are separate programs, this isn't intended to be compiled as a single project
+anyway each cpp files are separate programs, this isn't intended to be compiled as a single project. the structure of the main GLFW-related codes were shamelessly copied from GLFW's example code at [GLFW's site](https://www.glfw.org/documentation)
 
 * **_compile.sh_**
   * just a helper script to simplify compilation with gcc
