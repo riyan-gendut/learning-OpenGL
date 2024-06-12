@@ -50,3 +50,7 @@ anyway each cpp files are separate programs, this isn't intended to be compiled 
   * "a second" is "60 frames" which is a dumb way to determine time
   * test program for rotational matrix
   * I promise I'll use OOP eventually
+* **rotatmat.cpp**
+  * rotation on arbitrary center implemented
+  * (lazy) centroid calculation implemented
+  * wrote maxV and minV because I'm not importing `<algorithm>` just for those
