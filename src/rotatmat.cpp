@@ -12,19 +12,19 @@
 #define PI 3.14159
 
 float maxV(float input[], int insiz){
-	float held = input[0];
-	for (int i = 0; i < insiz; i++){
-		if (input[i] > held) held = input[i];
-	}
-	return held;
+    float held = input[0];
+    for (int i = 0; i < insiz; i++){
+        if (input[i] > held) held = input[i];
+    }
+    return held;
 }
 
 float minV(float input[], int insiz){
-	float held = input[0];
-	for (int i = 0; i < insiz; i++){
-		if (input[i] < held) held = input[i];
-	}
-	return held;
+    float held = input[0];
+    for (int i = 0; i < insiz; i++){
+        if (input[i] < held) held = input[i];
+    }
+    return held;
 }
 
 void SquareFromGridCoordinate(int xin, int yin, int maxx, int maxy, float arrs[]){
@@ -43,21 +43,21 @@ void SquareFromGridCoordinate(int xin, int yin, int maxx, int maxy, float arrs[]
 }
 
 void rotate(float input[], int insiz, float alpha, float output[]){
-	//rotation is counter-clockwise by default. to go clockwise just put negative alpha
-	//alpha is in degrees, cmath works in radian
-	float theta = alpha * PI/180.0;
-	//theta is in radian
-	int j=0;
+    //rotation is counter-clockwise by default. to go clockwise just put negative alpha
+    //alpha is in degrees, cmath works in radian
+    float theta = alpha * PI/180.0;
+    //theta is in radian
+    int j=0;
     for (int i = 0; 2*i < insiz; i++) {
         output[j] = (input[2*i]*cos(theta)) - (input[2*i+1]*sin(theta));
-		j=j+1;
+        j=j+1;
         output[j] = (input[2*i]*sin(theta)) + (input[2*i+1]*cos(theta));
-		j=j+1;
+        j=j+1;
     }
 }
 
 void transfer(float input[], float output[], int insiz){
-//	transfer an array to another
+//    transfer an array to another
     for (int i = 0; i < insiz; i++) {
         output[i] = input[i];
     }
@@ -65,28 +65,28 @@ void transfer(float input[], float output[], int insiz){
 
 
 void recentr(float input[], float output[], int insiz){
-	//Lazy algorithm to determine the center of a rectangular envelope of an object
-	float xsid[insiz/2];
-	float ysid[insiz/2];
+    //Lazy algorithm to determine the center of a rectangular envelope of an object
+    float xsid[insiz/2];
+    float ysid[insiz/2];
     for (int i = 0; 2*i < insiz; i++) {
         xsid[i] = input[2*i];
         ysid[i] = input[2*i+1];
     }
-	output[0] = minV(xsid, insiz/2) + ((maxV(xsid, insiz/2) - minV(xsid, insiz/2))/2);
-	output[1] = minV(ysid, insiz/2) + ((maxV(ysid, insiz/2) - minV(ysid, insiz/2))/2);
+    output[0] = minV(xsid, insiz/2) + ((maxV(xsid, insiz/2) - minV(xsid, insiz/2))/2);
+    output[1] = minV(ysid, insiz/2) + ((maxV(ysid, insiz/2) - minV(ysid, insiz/2))/2);
 }
 
 void orogintate(float input[], float origin[], int insiz, float alpha, float output[]){
-	//rotation is counter-clockwise by default. to go clockwise just put negative alpha
-	//alpha is in degrees, cmath works in radian
-	float theta = alpha * PI/180.0;
-	//theta is in radian
-	int j=0;
+    //rotation is counter-clockwise by default. to go clockwise just put negative alpha
+    //alpha is in degrees, cmath works in radian
+    float theta = alpha * PI/180.0;
+    //theta is in radian
+    int j=0;
     for (int i = 0; 2*i < insiz; i++) {
         output[j] = ((input[2*i]-origin[0])*cos(theta)) - ((input[2*i+1]-origin[1])*sin(theta)) + origin[0];
-		j=j+1;
+        j=j+1;
         output[j] = ((input[2*i]-origin[0])*sin(theta)) + ((input[2*i+1]-origin[1])*cos(theta)) + origin[1];
-		j=j+1;
+        j=j+1;
     }
 
 }
@@ -104,19 +104,19 @@ int main(int argc, char** argv){
     int height=2;
     int width=21;
     int wdsz[2];
-	int fraym=0;
+    int fraym=0;
     float arrin[8];
     float arrout[8];
     float color[12]={0.4,0.5,0.8,0.4,0.5,0.8,0.4,0.5,0.8,0.4,0.5,0.8};
     SquareFromGridCoordinate(20,1,41,2,arrin);
-	float hold=0;
+    float hold=0;
     float minin[8];
     float minout[8];
-	float minctr[2];
+    float minctr[2];
     float mincolor[12]={0.8,0.5,0.5,0.8,0.5,0.5,0.8,0.5,0.5,0.8,0.5,0.5};
-	float minst=0;
+    float minst=0;
     SquareFromGridCoordinate(3,0,21,4,minin);
-	recentr(minin, minctr, 8);
+    recentr(minin, minctr, 8);
     float bkgsqr[8]={-1.0,1.0,1.0,1.0,1.0,-1.0,-1.0,-1.0};
     float bkgclr[12]={0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8};
 
@@ -145,7 +145,7 @@ int main(int argc, char** argv){
         else if (wdsz[0]==wdsz[1]) glViewport(0,0,wdsz[0],wdsz[0]);
         /* Render here */
         rotate(arrin,8,hold,arrout);
-		orogintate(minin, minctr,8,minst,minout);
+        orogintate(minin, minctr,8,minst,minout);
         glClear(GL_COLOR_BUFFER_BIT);
         drawSqr(bkgsqr,bkgclr,0);
         drawSqr(minout,mincolor,0);
@@ -155,15 +155,15 @@ int main(int argc, char** argv){
         glfwSwapBuffers(window);
         /* Poll for and process events */
         glfwPollEvents();
-		fraym=fraym+1;
-		if (fraym>=60){
-			hold=hold-6;
-			fraym=0;
-		}
-		if (hold<=-360){
-			minst=minst-6;
-			hold=0;
-		}
+        fraym=fraym+1;
+        if (fraym>=60){
+            hold=hold-6;
+            fraym=0;
+        }
+        if (hold<=-360){
+            minst=minst-6;
+            hold=0;
+        }
     }
     glfwTerminate();
     return 0;
