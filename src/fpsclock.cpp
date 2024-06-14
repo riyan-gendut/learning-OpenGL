@@ -3,6 +3,7 @@
 //test program for rotational matrix
 //I promise I'll use OOP eventually
 
+
 #include <cmath>
 #include <iostream>
 #include <GLFW/glfw3.h>
@@ -26,16 +27,16 @@ void SquareFromGridCoordinate(int xin, int yin, int maxx, int maxy, float arrs[]
 }
 
 void rotate(float input[], int insiz, float alpha, float output[]){
-	//rotation is counter-clockwise by default. to go clockwise just put negative alpha
-	//alpha is in degrees, cmath works in radian
-	float theta = alpha * PI/180.0;
-	//theta is in radian
-	int j=0;
+    //rotation is counter-clockwise by default. to go clockwise just put negative alpha
+    //alpha is in degrees, cmath works in radian
+    float theta = alpha * PI/180.0;
+    //theta is in radian
+    int j=0;
     for (int i = 0; 2 * i < insiz; i++) {
         output[j] = (input[2*i]*cos(theta)) - (input[2*i+1]*sin(theta));
-		j=j+1;
+        j=j+1;
         output[j] = (input[2*i]*sin(theta)) + (input[2*i+1]*cos(theta));
-		j=j+1;
+        j=j+1;
     }
 }
 
@@ -52,17 +53,17 @@ int main(int argc, char** argv){
     int height=2;
     int width=21;
     int wdsz[2];
-	int fraym=0;
+    int fraym=0;
     float arrin[8];
     float arrout[8];
     float color[12]={0.4,0.5,0.8,0.4,0.5,0.8,0.4,0.5,0.8,0.4,0.5,0.8};
-	float hold=0;
+    float hold=0;
     float minin[8];
     float minout[8];
     float mincolor[12]={0.8,0.5,0.5,0.8,0.5,0.5,0.8,0.5,0.5,0.8,0.5,0.5};
-	float minst=0;
-    SquareFromGridCoordinate(10,1,width,height,arrin);
-    SquareFromGridCoordinate(10,3,width,4,minin);
+    float minst=0;
+    SquareFromGridCoordinate(10,1,21,2,minin);
+    SquareFromGridCoordinate(20,1,41,2,arrin);
     float bkgsqr[8]={-1.0,1.0,1.0,1.0,1.0,-1.0,-1.0,-1.0};
     float bkgclr[12]={0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8};
 
@@ -90,26 +91,26 @@ int main(int argc, char** argv){
         else if (wdsz[0]>wdsz[1]) glViewport((wdsz[0]-wdsz[1])/2,0,wdsz[1],wdsz[1]);
         else if (wdsz[0]==wdsz[1]) glViewport(0,0,wdsz[0],wdsz[0]);
         /* Render here */
+        rotate(minin,8,minst,minout);
         rotate(arrin,8,hold,arrout);
-		rotate(minin,8,minst,minout);
         glClear(GL_COLOR_BUFFER_BIT);
         drawSqr(bkgsqr,bkgclr,0);
-        drawSqr(arrout,color,0);
         drawSqr(minout,mincolor,0);
+        drawSqr(arrout,color,0);
         glFlush();
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
         /* Poll for and process events */
         glfwPollEvents();
-		fraym=fraym+1;
-		if (fraym>=60){
-			hold=hold-6;
-			fraym=0;
-		}
-		if (hold<=-360){
-			minst=minst-6;
-			hold=0;
-		}
+        fraym=fraym+1;
+        if (fraym>=60){
+            hold=hold-6;
+            fraym=0;
+        }
+        if (hold<=-360){
+            minst=minst-6;
+            hold=0;
+        }
     }
     glfwTerminate();
     return 0;
