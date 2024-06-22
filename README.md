@@ -54,3 +54,7 @@ anyway each cpp files are separate programs, this isn't intended to be compiled 
   * rotation on arbitrary center implemented
   * (lazy) centroid calculation implemented
   * wrote maxV and minV because I'm not importing `<algorithm>` just for those
+* **ConwayGL.cpp**
+  * Implementing Conway's Game of Life using a 2D state array
+  * using array means that for the most part the Conway logic were externalized
+  * objects needs only to know if it's "alive" or "dead" and change their color accordingly
