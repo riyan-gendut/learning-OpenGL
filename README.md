@@ -56,5 +56,7 @@ anyway each cpp files are separate programs, this isn't intended to be compiled 
   * wrote maxV and minV because I'm not importing `<algorithm>` just for those
 * **ConwayGL.cpp**
   * Implementing Conway's Game of Life using a 2D state array
+  * the array is seeded on the corner using `std::rand()` from `<cstdlib>`
   * using array means that for the most part the Conway logic were externalized
   * objects needs only to know if it's "alive" or "dead" and change their color accordingly
+  * also hey I fulfilled my promise I used OOP
