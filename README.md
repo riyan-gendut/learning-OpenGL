@@ -60,3 +60,8 @@ anyway each cpp files are separate programs, this isn't intended to be compiled 
   * using array means that for the most part the Conway logic were externalized
   * objects needs only to know if it's "alive" or "dead" and change their color accordingly
   * also hey I fulfilled my promise I used OOP
+* **ConwayGL.cpp**
+  * The logic portion of Conway's Game of Life is unchanged, it's just bigger and not limited to only update every 120 frames
+  * it's 50x50 vs 30x30 of the original, and seeded for 8x50 on the left instead of 8x8
+  * the state can also be reinitialized and reseeded by pressing space
+  * **WARNING** this code isn't limited/slowed down in any way and would happily go as fast as your monitor allows. might be dizzying on faster monitor.
