@@ -19,12 +19,12 @@ anyway each cpp files are separate programs, this isn't intended to be compiled 
   * a triangle with constantly cycling color
 * **dispgridtry.cpp**
   * trying to draw a square in a grid that moves to the right when you press E
-  * WARNING: The color buffer reads from "illegal" memory because I'm dumb. use at your own risk.
+  * **WARNING**: The color buffer reads from "illegal" memory because I'm dumb. use at your own risk.
   * Caution: this code is an abomination that generates massive multidimensional arrays
 * **dispgridclfx.cpp**
   * trying to draw a square in a grid that moves to the right when you press E
   * was supposed to be "fixed" version of dispgridtry.cpp but it still reads illegal memory lol
-  * WARNING: The color buffer reads from "illegal" memory because I'm dumb. use at your own risk.
+  * **WARNING**: The color buffer reads from "illegal" memory because I'm dumb. use at your own risk.
   * Caution: this code is an abomination that generates massive multidimensional arrays
 * **mutagrid.cpp**
   * A test program, in an effort to simplify dispgridtry.cpp
@@ -64,4 +64,4 @@ anyway each cpp files are separate programs, this isn't intended to be compiled 
   * The logic portion of Conway's Game of Life is unchanged, it's just bigger and not limited to only update every 120 frames
   * it's 50x50 vs 30x30 of the original, and seeded for 8x50 on the left instead of 8x8
   * the state can also be reinitialized and reseeded by pressing space
-  * **WARNING** this code isn't limited/slowed down in any way and would happily go as fast as your monitor allows. might be dizzying on faster monitor.
+  * **WARNING**: this code isn't limited/slowed down in any way and would happily go as fast as your monitor allows. might be dizzying on faster monitor.
