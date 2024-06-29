@@ -67,3 +67,6 @@ anyway each cpp files are separate programs, this isn't intended to be compiled 
   * the state can also be reinitialized and reseeded by pressing space
   * **WARNING**: this code isn't limited/slowed down in any way and would happily go as fast as your monitor allows. might be dizzying on faster monitor.
   * out of (misguided) attempt to minimize executable size, I deleted all of the comments on this code lol
+* **backport_ConwayGL.cpp**
+  * backporting the ability to re-seed the simulation from `fastconway.cpp` to `ConwayGL.cpp`
+  * it's otherwise unchanged from `ConwayGL.cpp`
