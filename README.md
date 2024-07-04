@@ -66,7 +66,12 @@ anyway each cpp files are separate programs, this isn't intended to be compiled 
   * it's 50x50 vs 30x30 of the original, and seeded for 8x50 on the left instead of 8x8
   * the state can also be reinitialized and reseeded by pressing space
   * **WARNING**: this code isn't limited/slowed down in any way and would happily go as fast as your monitor allows. might be dizzying on faster monitor.
-  * out of (misguided) attempt to minimize executable size, I deleted all of the comments on this code lol
+  * out of (misguided) attempt to minimize executable size, I deleted all of the `//` comments on this code lol
 * **backport_ConwayGL.cpp**
   * backporting the ability to re-seed the simulation from `fastconway.cpp` to `ConwayGL.cpp`
   * it's otherwise unchanged from `ConwayGL.cpp`
+* **realclock.cpp**
+  * a locally accurate clock using the `ctime` library
+  * it is mostly unchanged from `fpsclock.cpp`, so no OOP this time as well
+  * it now has an hour hand
+  * amusing note, your system might not calculate one second accurately
