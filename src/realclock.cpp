@@ -1,7 +1,6 @@
-//a small clock with a minute and second hand
-//"a second" is "60 frames" which is a dumb way to determine time
-//test program for rotational matrix
-//I promise I'll use OOP eventually
+//a locally accurate clock using the ctime library
+//it is mostly unchanged from fpsclock, so no OOP this time as well
+//though it now has hour hand as well
 
 
 #include <cmath>
