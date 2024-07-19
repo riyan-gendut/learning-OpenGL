@@ -6,8 +6,9 @@ A bunch of small programs made while I'm learning basic graphical programming in
 
 anyway each cpp files are separate programs, this isn't intended to be compiled as a single project. the structure of the main GLFW-related codes were shamelessly copied from GLFW's example code at [GLFW's site](https://www.glfw.org/documentation)
 
-* **_compile.sh_**
-  * just a helper script to simplify compilation with gcc
+* **_compile.sh, clangpile.sh, wincompile.sh_**
+  * just helper scripts to simplify compilation
+  * `compile.sh` uses gcc/g++, `clangpile.sh` uses clang++, and `wincompile.sh` uses mingw32
 
 * **smpren.cpp**
   * simple hello world triangle
