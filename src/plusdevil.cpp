@@ -41,7 +41,7 @@ int LoadImage(char *filename)
 
 int main(int argc, char** argv){
     GLuint texid;
-    ILuint    image;
+    ILuint image;
     int wdsz[2];
     float bkgsqr[8]={-1.0,1.0,1.0,1.0,1.0,-1.0,-1.0,-1.0};
 	float bkgtx[8]={0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0};
