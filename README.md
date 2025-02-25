@@ -4,11 +4,13 @@ A bunch of small programs made while I'm learning basic graphical programming in
 
 ...though it's *all* old now.
 
-anyway each cpp files are separate programs, this isn't intended to be compiled as a single project. the structure of the main GLFW-related codes were shamelessly copied from GLFW's example code at [GLFW's site](https://www.glfw.org/documentation)
+Anyway each cpp files are separate programs, this isn't intended to be compiled as a single project. The structure of the main GLFW-related codes were shamelessly copied from GLFW's example code at [GLFW's site](https://www.glfw.org/documentation)
 
-* **_compile.sh, clangpile.sh, wincompile.sh_**
+* **_compile.sh, clangpile.sh, clavile.sh**
   * just helper scripts to simplify compilation
-  * `compile.sh` uses gcc/g++, `clangpile.sh` uses clang++, and `wincompile.sh` uses mingw32
+  * `compile.sh` uses gcc/g++, `clangpile.sh` uses clang++
+  * `clavile.sh` uses clang _and_ links to DevIL library, that's basically the only difference
+
 
 * **smpren.cpp**
   * simple hello world triangle
@@ -76,3 +78,9 @@ anyway each cpp files are separate programs, this isn't intended to be compiled 
   * it is mostly unchanged from `fpsclock.cpp`, so no OOP this time as well
   * it now has an hour hand
   * amusing note, your system might not calculate one second accurately
+* **plusdevil.cpp**
+  * Drawing a square textured with an image loaded by DevIL
+  * the image path is loaded through a command line arguments
+  * most of the DevIL-related codes copied from [this forum post](https://community.khronos.org/t/how-to-load-an-image-in-opengl/71231/6)
+  * just needed a bit of changes to use vertex arrays—it also had the bit of code for aspect ratio preservation when window is resized
+  * the code is pretty dirty but it's ok cuz it's just a test
