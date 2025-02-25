@@ -2,7 +2,7 @@
 //the image path is loaded through a command line arguments
 //most of the codes copied from https://community.khronos.org/t/how-to-load-an-image-in-opengl/71231/6
 //just needed a bit of changes to use vertex arrays—it also had the bit of code for aspect ratio preservation when window is resized
-
+//the code is pretty dirty but it's ok cuz it's just a test
 
 
 
