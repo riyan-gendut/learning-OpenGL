@@ -106,7 +106,6 @@ int main(int argc, char** argv){
 		glTexCoordPointer(2, GL_FLOAT, 0, bkgtx);
 		glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 	    glDrawArrays(GL_QUADS, 0, 4);
-//	    glBindTexture( GL_TEXTURE_2D, NULL );
         glFlush();
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
