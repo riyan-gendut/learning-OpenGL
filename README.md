@@ -92,4 +92,4 @@ Anyway each cpp files are separate programs, this isn't intended to be compiled 
   * a small program that loads an image through DevIL
   * shows it as a texture on a rectangle
   * and then spins the rectangle
-  * Note to self, load image into opengl texture *after* making the context current through glfwMakeContextCurrent(window);
+  * Note to self, load image into opengl texture *after* making the openGL context current through `glfwMakeContextCurrent(window)`
