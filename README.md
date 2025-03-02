@@ -6,6 +6,10 @@ A bunch of small programs made while I'm learning basic graphical programming in
 
 Anyway each cpp files are separate programs, this isn't intended to be compiled as a single project. The structure of the main GLFW-related codes were shamelessly copied from GLFW's example code at [GLFW's site](https://www.glfw.org/documentation)
 
+* **_CCBYSA3.0.eye.png_**
+  * a sample asset, an anime eyes made in inkscape by yours truly
+  * released under CC BY-SA 3.0 ShareAlike license
+
 * **_compile.sh, clangpile.sh, clavile.sh**
   * just helper scripts to simplify compilation
   * `compile.sh` uses gcc/g++, `clangpile.sh` uses clang++
@@ -84,3 +88,8 @@ Anyway each cpp files are separate programs, this isn't intended to be compiled 
   * most of the DevIL-related codes copied from [this forum post](https://community.khronos.org/t/how-to-load-an-image-in-opengl/71231/6)
   * just needed a bit of changes to use vertex arrays—it also had the bit of code for aspect ratio preservation when window is resized
   * the code is pretty dirty but it's ok cuz it's just a test
+* **fodrv.cpp**
+  * a small program that loads an image through DevIL
+  * shows it as a texture on a rectangle
+  * and then spins the rectangle
+  * Note to self, load image into opengl texture *after* making the context current through glfwMakeContextCurrent(window);
