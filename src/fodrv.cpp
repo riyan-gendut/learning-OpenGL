@@ -167,7 +167,6 @@ int main(int argc, char** argv){
 	    glMatrixMode(GL_MODELVIEW);
 		drawPlain(bkgsqr,bkgclr,0);
 		drawTextured(sqrcoord,sqrtx,texid,0);
-//	    glBindTexture( GL_TEXTURE_2D, NULL );
         glFlush();
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
