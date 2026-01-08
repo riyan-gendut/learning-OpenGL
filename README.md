@@ -93,3 +93,13 @@ Anyway each cpp files are separate programs, this isn't intended to be compiled 
   * shows it as a texture on a rectangle
   * and then spins the rectangle
   * Note to self, load image into opengl texture *after* making the openGL context current through `glfwMakeContextCurrent(window)`
+* **bigconway.cpp**
+  * Optimization project on Conway game of life
+  * "Cell" class removed. this didn't tangibly improve performance but did simplify the program.
+  * changed the main loop to only draw "live" cells. performance improved vastly. I'm so smort.
+  * removed the "square" class and directly draw background as coordinate array. this somehow improved performance by a bit
+  * arrays are now statically sized through `#define` macro. effect is dubious but at least it's less likely to segfault?
+  * changed updatestate function inspired by Tsoding to use array of possible output instead of if statements, performance somewhat improved.
+  * changed the fps counter to use `glfwGetTime()` instead of polling `ctime`. idk if that affected performance.
+  * changed update model to "propagation" model instead of using getneighbors i.e. each value of the state array adds itself to its neighbors in a temp array and then the temp array value is used to change the state array. I also learned the `continue` keyword. both changes achieved 60 fps on 600x600 grid—on my poor laptop.
+  * **WARNING**: this code isn't limited/slowed down in any way and would happily go as fast as your monitor allows. might be dizzying on faster monitor.
