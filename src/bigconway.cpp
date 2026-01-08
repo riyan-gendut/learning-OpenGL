@@ -14,8 +14,8 @@
 #include <GLFW/glfw3.h>
 #include <GL/gl.h>
 
-#define COLLUMNC 1000
-#define ROWC 1000
+#define COLLUMNC 600
+#define ROWC 600
 
 void SquareFromGridCoordinate(int xin, int yin, int maxx, int maxy, float arrs[8]){
     float xxin=xin;
