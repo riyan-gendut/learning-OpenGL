@@ -101,5 +101,6 @@ Anyway each cpp files are separate programs, this isn't intended to be compiled 
   * arrays are now statically sized through `#define` macro. effect is dubious but at least it's less likely to segfault?
   * changed updatestate function inspired by Tsoding to use array of possible output instead of if statements, performance somewhat improved.
   * changed the fps counter to use `glfwGetTime()` instead of polling `ctime`. idk if that affected performance.
+  * went forward and used the c++ `random` library instead of `cstdlib` so I could remove it and `ctime`
   * changed update model to "propagation" model instead of using getneighbors i.e. each value of the state array adds itself to its neighbors in a temp array and then the temp array value is used to change the state array. I also learned the `continue` keyword. both changes achieved 60 fps on 600x600 grid—on my poor laptop.
   * **WARNING**: this code isn't limited/slowed down in any way and would happily go as fast as your monitor allows. might be dizzying on faster monitor.
