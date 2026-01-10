@@ -9,8 +9,7 @@
 
 
 #include <iostream>
-#include <ctime>
-#include <cstdlib>
+#include <random>
 #include <GLFW/glfw3.h>
 #include <GL/gl.h>
 
@@ -94,11 +93,15 @@ void updateState(int wed, int heg, int arrays[COLLUMNC][ROWC]){
 
 void instate(int wed, int heg, int arrays[COLLUMNC][ROWC]){
 	int ixc,yc,ter;
-    std::srand(std::time(nullptr));
+    //std::srand(std::time(nullptr));
+    std::random_device rd;
+    std::minstd_rand gen(rd());
+    std::uniform_int_distribution<> distrib(0,1);
     for (ixc=0; ixc<wed; ixc++){
 		if (ixc<8){
         	for (yc=0; yc<heg; yc++){
-            	ter = std::rand() % 2;
+            	//ter = std::rand() % 2;
+				ter = distrib(gen);
             	arrays[ixc][yc] = ter;
            }
 		}
